@@ -18,7 +18,6 @@ int main(int argc, char* argv[]){
 	clock_t import_data = clock();
 	for(int i = 2006; i < 2009; i++){
 		mydb.import("data/" + to_string(i) + ".csv");
-		cout << "data: " << i << ".csv load" << endl;
 	}
     // mydb.import("data/2006.csv");
     // mydb.import("data/2007.csv");

@@ -1,11 +1,14 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <cstdio>
 #include <dirent.h>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <unistd.h>
+#include <string.h>
+#include <algorithm>
 #include <sys/stat.h>
 
 using namespace std;

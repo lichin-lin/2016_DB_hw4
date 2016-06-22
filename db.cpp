@@ -11,6 +11,9 @@ int isNA(string s){
 	if(s.size()==0){
 		return 1;
 	}
+	if(s == "NA"){
+		return 1;
+	}
 	return 0;
 }
 void db::init(){
@@ -142,7 +145,7 @@ double db::query(string origin, string dest){
 		}
 	}
 	ReadFromDB.close();
-	cout << "->" << resultNum << endl;
+	//cout << "->" << resultNum << endl;
 	return resultDelay / resultNum; //Remember to return your result.
 }
 

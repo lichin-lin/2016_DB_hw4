@@ -24,9 +24,13 @@ int main(int argc, char* argv[]){
 	//load without index
 	clock_t no_index = clock();
 	double result1_no = mydb.query("IAH", "JFK");
+	clock_t no1 = clock();
 	double result2_no = mydb.query("IAH", "LAX");
+	clock_t no2 = clock();
 	double result3_no = mydb.query("JFK", "LAX");
+	clock_t no3 = clock();
 	double result4_no = mydb.query("JFK", "IAH");
+	clock_t no4 = clock();
 	double result5_no = mydb.query("LAX", "IAH");
 
 	//Create index on one or two columns.
@@ -36,11 +40,14 @@ int main(int argc, char* argv[]){
 	//Start timing
 	clock_t tQuery = clock();
 	double result1 = mydb.query("IAH", "JFK");
+	clock_t no5 = clock();
 	double result2 = mydb.query("IAH", "LAX");
+	clock_t no6 = clock();
 	double result3 = mydb.query("JFK", "LAX");
+	clock_t no7 = clock();
 	double result4 = mydb.query("JFK", "IAH");
+	clock_t no8 = clock();
 	double result5 = mydb.query("LAX", "IAH");
-
 	//End timing
 	clock_t tEnd = clock();
 	printf("----------------------- time records -----------------------\n\n");
@@ -50,8 +57,18 @@ int main(int argc, char* argv[]){
 	printf("Time taken for making index queries: \t\t%.3fs\n", (double)(tEnd - tQuery) / CLOCKS_PER_SEC);
 	printf("\n----------------------- time records -----------------------\n");
 	cout << endl;
+	// printf("time no index: \t\t%.3fs\n", (double)(no1 - no_index )/CLOCKS_PER_SEC);
+	// printf("time no index: \t\t%.3fs\n", (double)(no2 - no1 )/CLOCKS_PER_SEC);
+	// printf("time no index: \t\t%.3fs\n", (double)(no3 - no2 )/CLOCKS_PER_SEC);
+	// printf("time no index: \t\t%.3fs\n", (double)(no4 - no3 )/CLOCKS_PER_SEC);
+	// printf("time no index: \t\t%.3fs\n", (double)(tIndex - no4 )/CLOCKS_PER_SEC);
 
-	// print result
+	// printf("time index: \t\t%.3fs\n", (double)(no5 - tQuery )/CLOCKS_PER_SEC);
+	// printf("time index: \t\t%.3fs\n", (double)(no6 - no5 )/CLOCKS_PER_SEC);
+	// printf("time index: \t\t%.3fs\n", (double)(no7 - no6 )/CLOCKS_PER_SEC);
+	// printf("time index: \t\t%.3fs\n", (double)(no8 - no7 )/CLOCKS_PER_SEC);
+	// printf("time index: \t\t%.3fs\n", (double)(tEnd - no8 )/CLOCKS_PER_SEC);
+	// // print result
 	cout << "***query result 1***" << endl;
 	cout << result1_no << "(without index)/" << result1 << "(index)" << endl << endl;
 	cout << "***query result 2***" << endl;
